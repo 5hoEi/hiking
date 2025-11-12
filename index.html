@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>คู่มือเตรียมอุปกรณ์เดินป่า</title>
+    <title>Getting Ready For Your First Hiking</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,44 +19,66 @@
             font-family: 'Kanit', sans-serif;
             background-color: #f8f7f4;
         }
+
         .nav-button {
             transition: all 0.3s ease;
         }
+
         .nav-button.active {
             background-color: #1e3a2b;
             color: #ffffff;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
         }
+
         .nav-button:not(.active):hover {
             background-color: #f0f0f0;
         }
+
         .gear-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .gear-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
         }
+
         .modal-content {
             animation: slideUp 0.3s ease-out;
         }
+
         @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
+
         .modal-backdrop {
             animation: fadeIn 0.2s ease-out;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
+
 <body class="bg-stone-50 text-stone-800">
 
     <main class="container mx-auto p-4 md:p-8 max-w-7xl">
-        
+
         <header class="text-center mb-10">
             <h1 class="text-4xl md:text-5xl font-bold text-green-900 mb-4">คู่มือเตรียมอุปกรณ์เดินป่า</h1>
             <p class="text-lg text-stone-600 max-w-3xl mx-auto">
@@ -65,98 +88,122 @@
         </header>
 
         <nav class="flex justify-center space-x-2 md:space-x-4 mb-10">
-            <button id="btn-all" class="nav-button active py-2 px-4 md:px-6 font-semibold rounded-full text-stone-700 bg-white shadow-sm border border-stone-200" data-category="all">
+            <button id="btn-all"
+                class="nav-button active py-2 px-4 md:px-6 font-semibold rounded-full text-stone-700 bg-white shadow-sm border border-stone-200"
+                data-category="all">
                 ทั้งหมด
             </button>
-            <button class="nav-button py-2 px-4 md:px-6 font-semibold rounded-full text-stone-700 bg-white shadow-sm border border-stone-200" data-category="apparel">
+            <button
+                class="nav-button py-2 px-4 md:px-6 font-semibold rounded-full text-stone-700 bg-white shadow-sm border border-stone-200"
+                data-category="apparel">
                 เครื่องแต่งกาย
             </button>
-            <button class="nav-button py-2 px-4 md:px-6 font-semibold rounded-full text-stone-700 bg-white shadow-sm border border-stone-200" data-category="accessories">
+            <button
+                class="nav-button py-2 px-4 md:px-6 font-semibold rounded-full text-stone-700 bg-white shadow-sm border border-stone-200"
+                data-category="accessories">
                 อุปกรณ์เสริม
             </button>
-            <button class="nav-button py-2 px-4 md:px-6 font-semibold rounded-full text-stone-700 bg-white shadow-sm border border-stone-200" data-category="supplies">
+            <button
+                class="nav-button py-2 px-4 md:px-6 font-semibold rounded-full text-stone-700 bg-white shadow-sm border border-stone-200"
+                data-category="supplies">
                 เสบียงและเวชภัณฑ์
             </button>
         </nav>
 
         <section id="gear-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            
-            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer" data-category="apparel" onclick="openModal('shirt')">
+
+            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer"
+                data-category="apparel" onclick="openModal('shirt')">
                 <i class="fa-solid fa-shirt text-3xl text-green-700 mb-3"></i>
                 <h3 class="font-bold text-lg text-green-900">เสื้อระบายอากาศดี</h3>
             </div>
 
-            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer" data-category="apparel" onclick="openModal('pants')">
+            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer"
+                data-category="apparel" onclick="openModal('pants')">
                 <i class="fa-solid fa-person-hiking text-3xl text-green-700 mb-3"></i>
                 <h3 class="font-bold text-lg text-green-900">กางเกงระบายอากาศดี</h3>
             </div>
 
-            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer" data-category="apparel" onclick="openModal('hat')">
+            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer"
+                data-category="apparel" onclick="openModal('hat')">
                 <i class="fa-solid fa-hat-cowboy text-3xl text-green-700 mb-3"></i>
                 <h3 class="font-bold text-lg text-green-900">หมวกเดินป่า</h3>
             </div>
 
-            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer" data-category="apparel" onclick="openModal('boots')">
+            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer"
+                data-category="apparel" onclick="openModal('boots')">
                 <i class="fa-solid fa-shoe-prints text-3xl text-green-700 mb-3"></i>
                 <h3 class="font-bold text-lg text-green-900">รองเท้าเดินป่า</h3>
             </div>
 
-            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer" data-category="apparel" onclick="openModal('sleeves')">
+            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer"
+                data-category="apparel" onclick="openModal('sleeves')">
                 <i class="fa-solid fa-sun text-3xl text-green-700 mb-3"></i>
                 <h3 class="font-bold text-lg text-green-900">ปลอกแขน</h3>
             </div>
 
-            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer" data-category="apparel" onclick="openModal('gaiters')">
+            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer"
+                data-category="apparel" onclick="openModal('gaiters')">
                 <i class="fa-solid fa-shield-halved text-3xl text-green-700 mb-3"></i>
                 <h3 class="font-bold text-lg text-green-900">ปลอกขา (Gaiters)</h3>
             </div>
 
-            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer" data-category="apparel" onclick="openModal('buff')">
+            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer"
+                data-category="apparel" onclick="openModal('buff')">
                 <i class="fa-solid fa-headphones text-3xl text-green-700 mb-3"></i>
                 <h3 class="font-bold text-lg text-green-900">ผ้าบัพ (Buff)</h3>
             </div>
 
-            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer" data-category="apparel" onclick="openModal('jacket')">
+            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer"
+                data-category="apparel" onclick="openModal('jacket')">
                 <i class="fa-solid fa-wind text-3xl text-green-700 mb-3"></i>
                 <h3 class="font-bold text-lg text-green-900">Jacket กันลม</h3>
             </div>
 
-            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer" data-category="accessories" onclick="openModal('poles')">
+            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer"
+                data-category="accessories" onclick="openModal('poles')">
                 <i class="fa-solid fa-person-hiking text-3xl text-green-700 mb-3"></i>
                 <h3 class="font-bold text-lg text-green-900">ไม้เท้าเดินป่า</h3>
             </div>
 
-            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer" data-category="accessories" onclick="openModal('sunglasses')">
+            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer"
+                data-category="accessories" onclick="openModal('sunglasses')">
                 <i class="fa-solid fa-glasses text-3xl text-green-700 mb-3"></i>
                 <h3 class="font-bold text-lg text-green-900">แว่นตากันแดด</h3>
             </div>
 
-            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer" data-category="accessories" onclick="openModal('backpack')">
+            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer"
+                data-category="accessories" onclick="openModal('backpack')">
                 <i class="fa-solid fa-calendar text-3xl text-green-700 mb-3"></i>
                 <h3 class="font-bold text-lg text-green-900">กระเป๋า (Daypack)</h3>
             </div>
 
-            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer" data-category="supplies" onclick="openModal('water')">
+            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer"
+                data-category="supplies" onclick="openModal('water')">
                 <i class="fa-solid fa-bottle-water text-3xl text-green-700 mb-3"></i>
                 <h3 class="font-bold text-lg text-green-900">น้ำดื่ม</h3>
             </div>
 
-            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer" data-category="supplies" onclick="openModal('food')">
+            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer"
+                data-category="supplies" onclick="openModal('food')">
                 <i class="fa-solid fa-utensils text-3xl text-green-700 mb-3"></i>
                 <h3 class="font-bold text-lg text-green-900">อาหาร</h3>
             </div>
 
-            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer" data-category="supplies" onclick="openModal('repellent')">
+            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer"
+                data-category="supplies" onclick="openModal('repellent')">
                 <i class="fa-solid fa-bug-slash text-3xl text-green-700 mb-3"></i>
                 <h3 class="font-bold text-lg text-green-900">ยากันแมลง/ทาก</h3>
             </div>
 
-            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer" data-category="supplies" onclick="openModal('medicine')">
+            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer"
+                data-category="supplies" onclick="openModal('medicine')">
                 <i class="fa-solid fa-pills text-3xl text-green-700 mb-3"></i>
                 <h3 class="font-bold text-lg text-green-900">ยาแก้แพ้</h3>
             </div>
 
-            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer" data-category="supplies" onclick="openModal('firstaid')">
+            <div class="gear-card bg-white p-5 rounded-lg shadow-lg border border-stone-100 cursor-pointer"
+                data-category="supplies" onclick="openModal('firstaid')">
                 <i class="fa-solid fa-briefcase-medical text-3xl text-green-700 mb-3"></i>
                 <h3 class="font-bold text-lg text-green-900">ชุดปฐมพยาบาล</h3>
             </div>
@@ -164,15 +211,19 @@
         </section>
     </main>
 
-    <div id="modal-backdrop" class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center p-4 z-50 hidden modal-backdrop">
-        <div id="modal-content" class="modal-content bg-white rounded-lg shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto grid grid-cols-1 md:grid-cols-2 gap-6 relative">
-            
-            <button id="modal-close-btn" class="absolute top-4 right-4 text-stone-500 hover:text-stone-800 text-2xl z-10">
+    <div id="modal-backdrop"
+        class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center p-4 z-50 hidden modal-backdrop">
+        <div id="modal-content"
+            class="modal-content bg-white rounded-lg shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto grid grid-cols-1 md:grid-cols-2 gap-6 relative">
+
+            <button id="modal-close-btn"
+                class="absolute top-4 right-4 text-stone-500 hover:text-stone-800 text-2xl z-10">
                 <i class="fa-solid fa-times"></i>
             </button>
 
             <div class="relative min-h-[300px] md:min-h-0">
-                <img id="modal-img" src="" alt="รูปภาพอุปกรณ์" class="w-full h-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-tr-none">
+                <img id="modal-img" src="" alt="รูปภาพอุปกรณ์"
+                    class="w-full h-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-tr-none">
             </div>
 
             <div class="p-8">
@@ -185,6 +236,7 @@
 
     <script>
         const gearData = {
+            // ... (ข้อมูล gearData ทั้งหมดของคุณ อยู่ที่นี่) ...
             'shirt': {
                 title: 'เสื้อระบายอากาศดี',
                 img: 'src/images/shirt.png',
@@ -199,39 +251,39 @@
                 title: 'หมวกเดินป่า (Hiking Hat)',
                 img: 'src/images/hat.png',
                 details: `<ul class="list-disc list-inside space-y-2">
-                            <li>ปกป้องศีรษะและใบหน้า</li>
-                            <li>ควรเป็นหมวกปีกกว้าง (Brimmed Hat)</li>
-                            <li>ป้องกันแสงแดดที่ใบหน้าและท้ายทอย</li>
-                            <li>ช่วยระบายความร้อนและความชื้น</li>
-                         </ul>`
+                <li>ปกป้องศีรษะและใบหน้า</li>
+                <li>ควรเป็นหมวกปีกกว้าง (Brimmed Hat)</li>
+                <li>ป้องกันแสงแดดที่ใบหน้าและท้ายทอย</li>
+                <li>ช่วยระบายความร้อนและความชื้น</li>
+                </ul>`
             },
             'boots': {
                 title: 'รองเท้าเดินป่า (ลุยน้ำได้)',
                 img: 'src/images/shoes.png',
                 details: `<ul class="list-disc list-inside space-y-2">
-                            <li>หัวใจสำคัญของการเดิน</li>
-                            <li>เลือกแบบที่กันน้ำ (Waterproof) หรือแห้งไว</li>
-                            <li>ดอกยางลึก ช่วยยึดเกาะพื้นผิวที่ลื่น</li>
-                            <li>ปกป้องเท้าและข้อเท้าจากการบาดเจ็บ</li>
-                         </ul>`
+                <li>หัวใจสำคัญของการเดิน</li>
+                <li>เลือกแบบที่กันน้ำ (Waterproof) หรือแห้งไว</li>
+                <li>ดอกยางลึก ช่วยยึดเกาะพื้นผิวที่ลื่น</li>
+                <li>ปกป้องเท้าและข้อเท้าจากการบาดเจ็บ</li>
+                </ul>`
             },
             'sleeves': {
                 title: 'ปลอกแขน (Arm Sleeves)',
                 img: 'src/images/armSleeve.png',
                 details: `<ul class="list-disc list-inside space-y-2">
-                            <li>ป้องกันรังสี UV</li>
-                            <li>ป้องกันกิ่งไม้ขีดข่วน</li>
-                            <li>ช่วยระบายเหงื่อ</li>
-                         </ul>`
+                <li>ป้องกันรังสี UV</li>
+                <li>ป้องกันกิ่งไม้ขีดข่วน</li>
+                <li>ช่วยระบายเหงื่อ</li>
+                </ul>`
             },
             'gaiters': {
                 title: 'ปลอกขา (Gaiters)',
                 img: 'src/images/tungGunTark.png',
                 details: `<p class="font-bold text-red-600">สำคัญมากสำหรับป่าไทย!</p>
-                         <ul class="list-disc list-inside space-y-2">
-                            <li>ใช้ป้องกันทาก</li>
-                            <li>ป้องกันเศษหิน ดิน และโคลนเข้ารองเท้า</li>
-                         </ul>`
+                <ul class="list-disc list-inside space-y-2">
+                <li>ใช้ป้องกันทาก</li>
+                <li>ป้องกันเศษหิน ดิน และโคลนเข้ารองเท้า</li>
+                </ul>`
             },
             'buff': {
                 title: 'ผ้าบัพ (Buff)',
@@ -247,49 +299,49 @@
                 title: 'ไม้เท้าเดินป่า (Trekking Poles)',
                 img: 'src/images/pole.png',
                 details: `<h3>ทุ่นแรงและสร้างสมดุล</h3>
-                         <ul class="list-disc list-inside space-y-2">
-                            <li>ช่วยลดภาระน้ำหนักที่หัวเข่าและข้อเท้า (โดยเฉพาะตอนลงเขา)</li>
-                            <li>ช่วยพยุงตัว สร้างสมดุลในพื้นที่ลื่น หรือข้ามลำธาร</li>
-                         </ul>`
+                <ul class="list-disc list-inside space-y-2">
+                <li>ช่วยลดภาระน้ำหนักที่หัวเข่าและข้อเท้า (โดยเฉพาะตอนลงเขา)</li>
+                <li>ช่วยพยุงตัว สร้างสมดุลในพื้นที่ลื่น หรือข้ามลำธาร</li>
+                </ul>`
             },
             'sunglasses': {
                 title: 'แว่นตากันแดด (Sunglasses)',
                 img: 'src/images/sunglassses.png',
                 details: `<h3>ถนอมสายตา</h3>
-                         <ul class="list-disc list-inside space-y-2">
-                            <li>ป้องกันรังสี UVA และ UVB 100%</li>
-                            <li>ลดแสงจ้า ทำให้มองเห็นชัดเจนขึ้น</li>
-                            <li>ป้องกันลม, ฝุ่น, และแมลงเข้าตา</li>
-                         </ul>`
+                <ul class="list-disc list-inside space-y-2">
+                <li>ป้องกันรังสี UVA และ UVB 100%</li>
+                <li>ลดแสงจ้า ทำให้มองเห็นชัดเจนขึ้น</li>
+                <li>ป้องกันลม, ฝุ่น, และแมลงเข้าตา</li>
+                </ul>`
             },
             'backpack': {
                 title: 'กระเป๋าเดินป่า (Daypack)',
                 img: 'src/images/daypack.png',
                 details: `<h3>สัมภาระที่จำเป็น</h3>
-                         <ul class="list-disc list-inside space-y-2">
-                            <li>สำหรับทริปวันเดียว (Day trip) ควรใช้ขนาดเล็ก (Daypack) ที่คล่องตัว</li>
-                            <li>เพียงพอสำหรับใส่น้ำ, อาหาร, และของใช้จำเป็น</li>
-                            <li>ควรมีสายรัดอกและเอวเพื่อช่วยกระจายน้ำหนัก</li>
-                         </ul>`
+                <ul class="list-disc list-inside space-y-2">
+                <li>สำหรับทริปวันเดียว (Day trip) ควรใช้ขนาดเล็ก (Daypack) ที่คล่องตัว</li>
+                <li>เพียงพอสำหรับใส่น้ำ, อาหาร, และของใช้จำเป็น</li>
+                <li>ควรมีสายรัดอกและเอวเพื่อช่วยกระจายน้ำหนัก</li>
+                </ul>`
             },
             'water': {
                 title: 'น้ำดื่ม (Drinking Water)',
                 img: 'src/images/drinkingWater.png',
                 details: `<p class="font-bold text-red-600">สำคัญที่สุด!</p>
-                         <ul class="list-disc list-inside space-y-2">
-                            <li>ควรพกให้เพียงพอ (อย่างน้อย 1.5-2 ลิตรสำหรับทริปวันเดียว)</li>
-                            <li>หรือพกเครื่องกรองน้ำแบบพกพาหากต้องไปแหล่งน้ำธรรมชาติ</li>
-                         </ul>`
+                <ul class="list-disc list-inside space-y-2">
+                <li>ควรพกให้เพียงพอ (อย่างน้อย 1.5-2 ลิตรสำหรับทริปวันเดียว)</li>
+                <li>หรือพกเครื่องกรองน้ำแบบพกพาหากต้องไปแหล่งน้ำธรรมชาติ</li>
+                </ul>`
             },
             'food': {
                 title: 'อาหาร (Food)',
                 img: 'src/images/food.png',
                 details: `<p>เลือกของที่ให้พลังงานสูงและพกพาง่าย:</p>
-                         <ul class="list-disc list-inside space-y-2">
-                            <li>Energy bars</li>
-                            <li>ถั่ว หรือ ผลไม้แห้ง</li>
-                            <li>อาหารมื้อกลางวันง่ายๆ ที่ไม่ต้องปรุงเพิ่ม</li>
-                         </ul>`
+                <ul class="list-disc list-inside space-y-2">
+                <li>Energy bars</li>
+                <li>ถั่ว หรือ ผลไม้แห้ง</li>
+                <li>อาหารมื้อกลางวันง่ายๆ ที่ไม่ต้องปรุงเพิ่ม</li>
+                </ul>`
             },
             'repellent': {
                 title: 'ยากันแมลง/ทาก',
@@ -313,7 +365,6 @@
         const modalTitle = document.getElementById('modal-title');
         const modalImg = document.getElementById('modal-img');
         const modalBody = document.getElementById('modal-body');
-        
         const navButtons = document.querySelectorAll('.nav-button');
         const gearGrid = document.getElementById('gear-grid');
         const gearCards = gearGrid.querySelectorAll('.gear-card');
@@ -325,14 +376,13 @@
             modalTitle.textContent = data.title;
             modalImg.src = data.img;
             modalBody.innerHTML = data.details;
-            
             modalBackdrop.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden'; // ป้องกันการเลื่อนหน้า background
         }
 
         function closeModal() {
             modalBackdrop.classList.add('hidden');
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = 'auto'; // คืนค่าการเลื่อนหน้า
         }
 
         function filterCategory(category) {
@@ -343,7 +393,6 @@
                     card.classList.add('hidden');
                 }
             });
-            
             navButtons.forEach(btn => {
                 if (btn.dataset.category === category) {
                     btn.classList.add('active');
@@ -366,11 +415,21 @@
                 filterCategory(category);
             });
         });
-        
-        modalImg.onerror = function() {
+
+        modalImg.onerror = function () {
             this.src = 'https://placehold.co/600x600/cccccc/333333?text=Image+Not+Found';
         };
 
+        // START: เพิ่มโค้ดสำหรับปุ่ม Esc
+        document.addEventListener('keydown', (e) => {
+            // ตรวจสอบว่าปุ่มที่กดคือ 'Escape' และ modal กำลังเปิดอยู่ (ไม่มี class 'hidden')
+            if (e.key === 'Escape' && !modalBackdrop.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+        // END: เพิ่มโค้ดสำหรับปุ่ม Esc
+
     </script>
 </body>
+
 </html>
